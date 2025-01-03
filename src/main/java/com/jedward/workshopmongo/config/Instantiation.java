@@ -1,7 +1,7 @@
 package com.jedward.workshopmongo.config;
 
 import com.jedward.workshopmongo.domain.User;
-import com.jedward.workshopmongo.repository.UserRepository;
+import com.jedward.workshopmongo.repositories.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
