@@ -4,6 +4,7 @@ import com.jedward.workshopmongo.domain.Post;
 import com.jedward.workshopmongo.domain.User;
 import com.jedward.workshopmongo.repositories.PostRepository;
 import com.jedward.workshopmongo.repositories.UserRepository;
+import com.jedward.workshopmongo.resources.dto.AuthorDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
@@ -31,10 +32,11 @@ public class Instantiation implements CommandLineRunner {
         User user = new User(null, "Jhonatan Edward", "jhonatan@gmail.com");
         User user1 = new User(null, "Uncle Bob", "uncle@gmail.com");
 
-        Post post = new Post(null, sdf.parse("03/01/2025"), "Feliz Ano Novo", "Muita saude e paz a todos.", user);
-        Post post1 = new Post(null, sdf.parse("03/01/2025"), "Libertadores do SPFC", "Esse ano o tricolor será campeão.", user);
-
         userRepository.saveAll(Arrays.asList(user,user1));
+
+        Post post = new Post(null, sdf.parse("03/01/2025"), "Feliz Ano Novo", "Muita saude e paz a todos.", new AuthorDTO(user));
+        Post post1 = new Post(null, sdf.parse("03/01/2025"), "Libertadores do SPFC", "Esse ano o tricolor será campeão.", new AuthorDTO(user1));
+
         postRepository.saveAll(Arrays.asList(post, post1));
     }
 }

@@ -1,5 +1,6 @@
 package com.jedward.workshopmongo.domain;
 
+import com.jedward.workshopmongo.resources.dto.AuthorDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,5 +16,5 @@ public class Post {
     private Date date;
     private String title;
     private String body;
-    private User author;
+    private AuthorDTO author;
 }
