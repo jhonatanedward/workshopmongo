@@ -7,6 +7,7 @@ import com.jedward.workshopmongo.services.exception.ObjectNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,7 +30,7 @@ public class UserService {
     }
 
     public User fromDTO(UserDTO userDto) {
-        return new User(userDto.getId(), userDto.getName(), userDto.getEmail());
+        return new User(userDto.getId(), userDto.getName(), userDto.getEmail(), new ArrayList<>());
     }
 
     public void delete(String id) {
